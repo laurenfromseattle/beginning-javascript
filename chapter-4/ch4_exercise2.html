@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 4, Exercise 2</title>
+	</head>
+
+	<body>
+
+		<script>
+
+			function multiplicationTable(timesTable, start, end) {
+				for (var loopCounter = start; loopCounter <= end; loopCounter++) {
+					var result = loopCounter * timesTable;
+					document.write(timesTable + ' * ' + 
+						loopCounter + ' = ' + result + '<br />');
+				}
+			}
+
+			function userRequest() {
+				var response = prompt('What times table would you like displayed?', 'Enter -1 to quit.');
+
+				if (isNaN(response)) {
+					alert('Please enter valid number');
+					return userRequest();
+				} else if (response == -1) {
+					// Nothing
+				} else {
+					multiplicationTable(response, 1, response);
+					return userRequest();
+				}
+			}
+
+			userRequest();
+			
+		</script>
+
+	</body>
+
+</html>
