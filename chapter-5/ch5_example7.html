@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 5, Example 7</title>
+	</head>
+
+	<body>
+
+		<script>
+			var greeting;
+
+			var currentDate = new Date();
+			var currentHour = currentDate.getHours();
+			var currentMinute = currentDate.getMinutes();
+			var currentSecond = currentDate.getSeconds();
+
+			if (currentSecond < 10) {
+				currentSecond = '0' + currentSecond;
+			}
+
+			if (currentMinute < 10) {
+				currentMinute = '0' + currentMinute;
+			}
+
+			if (currentHour < 12) {
+				greeting = document.write('Good morning! ');
+			} else if (currentHour >= 12 && currentHour < 17) {
+				greeting = document.write('Good afternoon! ');
+			} else {
+				greeting = document.write('Good evening! ');
+			}
+
+			document.write('The current time is ' + currentHour + ':' +
+							currentMinute + ':' + currentSecond);
+			document.write('<br />' + currentDate.toTimeString());
+		</script>
+
+	</body>
+
+</html>

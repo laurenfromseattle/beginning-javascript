@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 5, Example 5</title>
+	</head>
+
+	<body>
+
+		<script>
+			function fix(fixNumber, decimalPlaces) {
+				var div = Math.pow(10, decimalPlaces);
+				fixNumber = Math.round(fixNumber * div) / div;
+				return fixNumber
+			}
+
+			var fixNumber = prompt('Enter the number.');
+			var decimalPlaces = prompt('Enter the number of decimal places.');
+
+			alert(fix(fixNumber, decimalPlaces));
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 5, Example 6</title>
+	</head>
+
+	<body>
+
+		<script>
+			var months = ['January', 'February', 'March', 'April',
+						  'May', 'June', 'July', 'August',
+						  'September', 'October', 'November', 'December'];
+
+			var currentDate = new Date();
+			var yearNow = currentDate.getFullYear();
+			var monthNow = months[currentDate.getMonth()];
+			var dateNow = currentDate.getDate();
+			var dateSuffix;
+
+			switch (dateNow) {
+				case 1:
+				case 21:
+				case 31:
+					dateSuffix = 'st';
+					break;
+				case 2:
+				case 22:
+					dateSuffix = 'nd';
+					break;
+				case 3:
+				case 23:
+					dateSuffix = 'rd';
+					break;
+				default:
+					dateSuffix = 'th';
+			}
+
+			document.write('Today is the ' + dateNow + dateSuffix +
+				' day of ' + monthNow + ' in the year ' + yearNow);
+
+		</script>
+
+	</body>
+
+</html>

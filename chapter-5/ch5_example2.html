@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 5, Example 2</title>
+	</head>
+
+	<body>
+
+		<script>
+
+			function checkCharType(charToCheck) {
+				var returnValue;
+				var charCode = charToCheck.charCodeAt();
+
+				if (charCode >= 'A'.charCodeAt() && charCode <= 'Z'.charCodeAt()) {
+					returnValue = 'U';
+				} else if (charCode >= 'a'.charCodeAt() && charCode <= 'z'.charCodeAt()) {
+					returnValue = 'L';
+				} else if (charCode >= '0'.charCodeAt() && charCode <= '9'.charCodeAt()) {
+					returnValue = 'N';
+				} else {
+					returnValue = 'O';
+				}
+
+				return returnValue;
+			}
+
+			var myString = prompt('Enter some text', 'Hello World!');
+
+			switch (checkCharType(myString)){
+				case 'U':
+					document.write('First character in string is uppercase.');
+					break;
+				case 'L':
+					document.write('First character in string is lowercase.');
+					break;
+				case 'N':
+					document.write('First character in string is a number.');
+					break;
+				default:
+					document.write('First character in string is neither a character nor a number.');
+			}
+
+		</script>
+
+	</body>
+
+</html>
