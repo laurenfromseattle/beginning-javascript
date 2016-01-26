@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 5, Exercise 2</title>
+	</head>
+
+	<body>
+
+		<script>
+
+			// Obtain a list of names from the user, storing each name entered in an array.
+			// Keep getting another name until the user enters nothing.
+			// Sort the names in ascending order and then write them out to the page, with each name on its own line.
+
+			var listOfNames = [];
+			var newName = prompt('Enter a name');
+
+			while ((newName !== '') && (newName !== null) && (newName !== '0')) {
+				listOfNames.push(newName);
+				newName = prompt('Enter another name, or enter 0 to get alphabetical list.');
+			}
+
+			if (listOfNames[0] === undefined) {
+				document.write('You have not entered any names.');
+			} else {
+
+				for (var name in listOfNames) {
+					listOfNames[name] = listOfNames[name].toLowerCase();
+				}
+
+				listOfNames.sort();
+
+				for (var name in listOfNames) {
+					listOfNames[name] = listOfNames[name][0].toUpperCase() + listOfNames[name].substr(1);
+					document.write(listOfNames[name] + '<br />');
+				}
+
+
+			}
+
+
+
+		</script>
+
+	</body>
+
+</html>

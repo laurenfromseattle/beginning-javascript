@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 5, Exercise 1</title>
+	</head>
+
+	<body>
+
+		<script>
+			// Task: Using the Date type, calculate the date 12 months from now and write this into a web page.
+
+			// Create a new Date object with the current date
+			var currentDate = new Date();
+			// Get the current month
+			var currentMonth = currentDate.getMonth();
+			// Set the number of months you want to go in the future
+			var monthChange = prompt('Please enter how many months you would like to travel into the future', 0);
+			// Create a new Date object with the future date, after month change
+			var futureDate = new Date(currentDate.setMonth(currentMonth + monthChange));
+
+			// Everything below this line is just to help us write the date to the page in an intelligible way.
+			// Define an array, months. Define variable futureMonth that will spell out the month, after the monthChange.
+			// Variable monthSuffix will determine whether we need to add an 's' to the string after the word 'month'.
+			var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+			var futureMonth = months[futureDate.getMonth()];
+			var monthSuffix;
+			switch (monthChange) {
+				case '1':
+					monthSuffix = '';
+					break;
+				default:
+					monthSuffix = 's';
+			}
+
+			// Define variable future day and set to day of the week.
+			var futureDay;
+			switch (futureDate.getDay()) {
+				case 0:
+					futureDay = 'Sunday';
+					break;
+				case 1:
+					futureDay =  'Monday';
+					break;
+				case 2:
+					futureDay =  'Tuesday';
+					break;
+				case 3:
+					futureDay =  'Wednesday';
+					break;
+				case 4:
+					futureDay =  'Thursday';
+					break;
+				case 5:
+					futureDay =  'Friday';
+					break;
+				case 6:
+					futureDay =  'Saturday';
+					break;
+				}
+
+			// Write future date to web page
+			document.write('You have traveled ' + monthChange + ' month' + monthSuffix +
+				' into the future.' + ' Today\'s date is ' + futureDay + ', ' +
+				months[futureDate.getMonth()] + ' ' + futureDate.getDate() + ', ' +
+				futureDate.getFullYear() + '.');
+
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Chapter 5, Exercise 3</title>
+	</head>
+
+	<body>
+
+		<script>
+			// Create a constructor for the Person reference type
+			function Person(firstName, lastName) {
+				this.firstName = firstName;
+				this.lastName = lastName;
+			}
+
+			// Define methods
+			Person.prototype.getFullName = function() {
+				return this.firstName + ' ' + this.lastName;
+			};
+
+			Person.prototype.greet = function(person) {
+				alert('Hello, ' + person.getFullName() + '. I\'m ' + this.getFullName() + '.');
+			};
+
+			var person1 = new Person('Lauren', 'Tucker');
+			var person2 = new Person('Bridger', 'Cabe');
+
+			person1.greet(person2);
+		</script>
+
+	</body>
+
+</html>
